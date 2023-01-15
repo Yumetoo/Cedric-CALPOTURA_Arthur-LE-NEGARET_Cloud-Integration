@@ -14,7 +14,7 @@
 		channel="channelEntree" 
     	directory="dataIn"
     	filename-pattern="*.txt">
-    		<int:poller id="poller" fixed-delay="1000" />
+    		<int:poller id="poller" fixed-delay="1400" />
     </int-file:inbound-channel-adapter>
 
     <int:channel id="channelEntree"></int:channel>
@@ -25,8 +25,8 @@
     <int:channel id="responseChannel"></int:channel>
 
     <int:service-activator id="exampleServiceActivator" input-channel="responseChannel"
-                           output-channel = "outChannel" method="create">
-        <bean class="test.Account"/>
+                           output-channel = "outChannel" method="myArea">
+        <bean class="test.CharacterLeveling"/>
     </int:service-activator>
 
     <int:channel id="outChannel"></int:channel>
